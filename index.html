@@ -1,357 +1,486 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
-  </head>
-  <body>
-    <nav id="desktop-nav">
-      <div class="logo">My Portfolio</div>
-      <div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mediaqueries.css" />
+</head>
+
+<body>
+  <nav id="desktop-nav">
+    <div class="logo">Ishan Kawshalya</div>
+    <div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#volunteer">Volunteer</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <nav id="hamburger-nav">
+    <div class="logo">My Portfolio</div>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu-links">
+        <li><a href="#about" onclick="toggleMenu()">About</a></li>
+        <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+        <li><a href="#education" onclick="toggleMenu()">Education</a></li>
+        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+        <li><a href="#certifications" onclick="toggleMenu()">Certifications</a></li>
+        <li><a href="#achievements" onclick="toggleMenu()">Achievements</a></li>
+        <li><a href="#volunteer" onclick="toggleMenu()">Volunteer</a></li>
+        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+      </div>
+    </div>
+  </nav>
+  <section id="profile">
+    <div class="section__pic-container">
+      <img src="./assets/profile-pic.jpg" alt="Ishan Kawshalya profile picture" />
+    </div>
+    <div class="section__text">
+      <p class="section__text__p1">Hello, I'm</p>
+      <h1 class="title">Ishan Kawshalya</h1>
+      <p class="section__text__p2">Computer Science and Engineering undergraduate from University of Moratuwa, Sri
+        Lanka.</p>
+      <div class="btn-container">
+        <button class="btn btn-color-2" onclick="window.open('./assets/resume-example.pdf')">
+          Download CV
+        </button>
+      </div>
+      <div id="socials-container">
+        <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon"
+          onclick="location.href='https://linkedin.com/in/ishan-kawshalya-a557bb241'" />
+        <img src="./assets/github.png" alt="My Github profile" class="icon"
+          onclick="location.href='https://github.com/Ishdew'" />
+      </div>
+    </div>
+  </section>
+  <section id="about">
+    <h1 class="title">About Me</h1>
+    <p class="section__text__p1">I am a full stack web developer with a passion for creating interactive and responsive
+      web applications.
+      I have experience working with JavaScript, React, Node.js, Express, MySQL, HTML and CSS.
+      I am a quick learner and I am always looking to expand my knowledge and skill set.
+      I am a team player and I am excited to work with others to create amazing applications.I am eager to learn new
+      technologies.</p>
+
+    <div class="about-details-container">
+      <div class="about-containers">
+
+
+      </div>
+      <div class="text-container">
+
+      </div>
+    </div>
+    </div>
+
+  </section>
+  <section id="experience">
+    <p class="section__text__p1">Explore My</p>
+    <h1 class="title">Work Experience</h1>
+    <div class="experience-details-container">
+      <div class="about-containers">
+        <div class="details-container">
+          <div class="company-header">
+            <img src="./assets/99x.png" alt="99x Logo" class="company-logo" />
+            <h2 class="experience-sub-title">99x</h2>
+          </div>
+          <div class="article-container">
+            <article>
+              <div>
+                <h3>Software Engineering Intern - AI-Assisted Engineering Team</h3>
+                <p class="text-light">Dec 2024 - June 2025</p>
+                <ul>
+                  <li>Developed a pull request review agent for Azure DevOps using Azure functions and Azure DevOps
+                    Webhooks.</li>
+                  <li> Worked on building a automated Appraisal meeting scheduler for HR using Microsoft Power Automate.
+                  </li>
+                </ul>
+                <div class="experience-tech">
+                  <p><strong>Technologies:</strong> Azure Functions, Langchain, Python, TypeScript, Azure DevOps, Power
+                    Automate</p>
+                </div>
+                <div class="experience-links">
+                  <a href="https://github.com/99x-incubator/azure_pr_review_agent_azure_func" target="_blank"
+                    class="github-link">
+                    <img src="./assets/github.png" alt="Github" class="icon small-icon" />
+                    View Codes
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <section id="education">
+    <p class="section__text__p1">Explore My</p>
+    <h1 class="title">Education</h1>
+    <div class="experience-details-container">
+      <div class="about-containers">
+        <div class="details-container">
+          <div class="company-header">
+            <img src="./assets/uom.jpg" alt="Education icon" class="company-logo" />
+            <h2 class="experience-sub-title">University of Moratuwa</h2>
+          </div>
+          <div class="article-container">
+            <article>
+              <div>
+                <h3>B.Sc. Engineering (Hons) Computer Science and Engineering</h3>
+                <p class="text-small">June 2022 - Present</p>
+                <p class="highlight-text">CGPA: 3.47/4.0 (6 Semesters)</p>
+
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="details-container">
+          <div class="company-header">
+            <img src="./assets/school.png" alt="Education icon" class="company-logo" />
+            <h2 class="experience-sub-title">Rahula College, Matara</h2>
+          </div>
+          <div class="article-container">
+            <article>
+              <div>
+                <h3>GCE Advanced Level - Physical Science Stream - Combined Mathematics, Physics, Chemistry</h3>
+                <p class="text-small">May 2014 - Oct 2020</p>
+                <p>Island Rank: 681</p>
+                <p>Z Score: 2.12, 3As</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <section id="skills">
+    <p class="section__text__p1">Explore My</p>
+    <h1 class="title">Skills</h1>
+    <div class="experience-details-container">
+      <div class="about-containers">
+
+        <!-- Programming Languages -->
+        <div class="details-container">
+          <h2 class="experience-sub-title">Programming Languages</h2>
+          <div class="article-container">
+            <article class="skill-card">
+              <h3>Java</h3>
+            </article>
+            <article class="skill-card">
+              <h3>Python</h3>
+            </article>
+            <article class="skill-card">
+              <h3>JavaScript</h3>
+            </article>
+            <article class="skill-card">
+              <h3>TypeScript</h3>
+            </article>
+          </div>
+        </div>
+
+        <!-- Web Technologies -->
+        <div class="details-container">
+          <h2 class="experience-sub-title">Web Technologies</h2>
+          <div class="article-container">
+            <article class="skill-card">
+              <h3>React</h3>
+            </article>
+            <article class="skill-card">
+              <h3>Node JS</h3>
+            </article>
+            <article class="skill-card">
+              <h3>Spring Boot</h3>
+            </article>
+            <article class="skill-card">
+              <h3>Fast API</h3>
+            </article>
+          </div>
+        </div>
+
+        <!-- Database Systems -->
+        <div class="details-container">
+          <h2 class="experience-sub-title">Database Systems</h2>
+          <div class="article-container">
+            <article class="skill-card">
+              <h3>MySQL</h3>
+            </article>
+            <article class="skill-card">
+              <h3>PostgreSQL</h3>
+            </article>
+          </div>
+        </div>
+
+        <!-- Machine Learning & Agentic Frameworks -->
+        <div class="details-container">
+          <h2 class="experience-sub-title">ML & Agentic Frameworks</h2>
+          <div class="article-container">
+            <article class="skill-card">
+              <h3>LangChain</h3>
+            </article>
+            <article class="skill-card">
+              <h3>PyTorch</h3>
+            </article>
+            <article class="skill-card">
+              <h3>OpenCV</h3>
+            </article>
+          </div>
+        </div>
+
+        <!-- Cloud Technologies -->
+        <div class="details-container">
+          <h2 class="experience-sub-title">Cloud Technologies & Version Control</h2>
+          <div class="article-container">
+            <article class="skill-card">
+              <h3>Azure</h3>
+            </article>
+            <article class="skill-card">
+              <h3>GitHub</h3>
+            </article>
+            <article class="skill-card">
+              <h3>Git</h3>
+            </article>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+  <section id="projects">
+    <p class="section__text__p1">Browse My Recent</p>
+    <h1 class="title">Projects</h1>
+    <div class="experience-details-container">
+      <div class="about-containers">
+
+        <!-- AskFlow -->
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets/AskFlow.png" alt="AskFlow" class="project-img" />
+          </div>
+          <h2 class="experience-sub-title project-title">AskFlow - Intelligent Document Analysis Engine</h2>
+          <p class="project-tools"><strong>Tools:</strong> FastAPI, Next.js, PostgreSQL, Langchain, Ollama, Docker</p>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/Ishdew/AskFlow'">
+              Github
+            </button>
+          </div>
+        </div>
+        <!-- InnoLink -->
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets/innoLink.png" alt="InnoLink" class="project-img" />
+          </div>
+          <h2 class="experience-sub-title project-title">InnoLink - Secure Investment Marketplace</h2>
+          <p class="project-tools"><strong>Tools:</strong> SpringBoot, React, PostgreSQL, LangChain4j, Azure, GitHub
+            Actions</p>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn"
+              onclick="location.href='https://github.com/ThisaraWeerakoon/Innolink'">
+              Github
+            </button>
+          </div>
+        </div>
+        <!-- PR Review Agent -->
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets/PR Review Agent.png" alt="PR Review Agent" class="project-img" />
+          </div>
+          <h2 class="experience-sub-title project-title">PR Review Agent for Azure DevOps</h2>
+          <p class="project-tools"><strong>Tools:</strong> Azure Functions, Langchain, JavaScript, Docker, Azure DevOps
+          </p>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn"
+              onclick="location.href='https://github.com/99x-incubator/azure_pr_review_agent_azure_func'">
+              Github
+            </button>
+          </div>
+        </div>
+        <!-- HRMS -->
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets/project-1.png" alt="Project 1" class="project-img" />
+          </div>
+          <h2 class="experience-sub-title project-title">Human Resource Management System</h2>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn"
+              onclick="location.href='https://github.com/deshithagallage/HRMS-Project'">
+              Github
+            </button>
+
+          </div>
+        </div>
+        <!-- Smart MediBox -->
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets/Smart_Medibox.png" alt="Smart MediBox" class="project-img" />
+          </div>
+          <h2 class="experience-sub-title project-title">Smart MediBox</h2>
+          <p class="project-tools"><strong>Tools:</strong> C++, Node-Red, Arduino, IoT</p>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn"
+              onclick="location.href='https://github.com/Ishdew/Smart_MediBox'">
+              Github
+            </button>
+          </div>
+        </div>
+        <!-- PintOS Operating System -->
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets/PintOS.png" alt="PintOS" class="project-img" />
+          </div>
+          <h2 class="experience-sub-title project-title">PintOS Operating System</h2>
+          <p class="project-tools"><strong>Tools:</strong> C</p>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn"
+              onclick="location.href='https://github.com/Ishdew/Pintos-Operating-System'">
+              Github
+            </button>
+          </div>
+        </div>
+        <!-- 4-bit Processor -->
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets/NanoProcessor.png" alt="4-bit Processor" class="project-img" />
+          </div>
+          <h2 class="experience-sub-title project-title">4-bit Processor Design and Development</h2>
+          <p class="project-tools"><strong>Tools:</strong> VHDL, Vivado, Basys 3 FPGA</p>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn"
+              onclick="location.href='https://github.com/Ishdew/Nano-Processor'">
+              Github
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+  <section id="certifications">
+    <p class="section__text__p1">See My</p>
+    <h1 class="title">Certifications</h1>
+    <div class="experience-details-container">
+      <div class="about-containers">
+        <div class="details-container certification-card">
+          <ul class="certification-list">
+            <li>
+              <a href="https://drive.google.com/file/d/1zHxvkCyOlseJyK_kpXtb-n24kphSgJ4d/view" class="cert-link"
+                target="_blank">
+                <h2 class="experience-sub-title">Web Design for Beginners</h2>
+                <p>CODL, University of Moratuwa</p>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.coursera.org/account/accomplishments/verify/DM5MA7BVYV84" class="cert-link"
+                target="_blank">
+                <h2 class="experience-sub-title">Supervised Machine Learning: Regression and Classification</h2>
+                <p>Coursera</p>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.udemy.com/certificate/UC-3299d2bd-d4e5-4080-aa84-046081316423/" class="cert-link"
+                target="_blank">
+                <h2 class="experience-sub-title">Docker for the Absolute Beginner - Hands On - DevOps</h2>
+                <p>Udemy</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="achievements">
+    <p class="section__text__p1">See My</p>
+    <h1 class="title">Achievements</h1>
+    <div class="experience-details-container">
+      <div class="about-containers">
+        <div class="details-container certification-card">
+          <div class="article-container" style="justify-content: center; text-align: center;">
+            <h2 class="experience-sub-title">Global Rank 307 - Country Rank 15</h2>
+            <p>IEEEXtreme 18.0</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="volunteer">
+    <p class="section__text__p1">Explore My</p>
+    <h1 class="title">Volunteer Experience</h1>
+    <div class="experience-details-container">
+      <div class="about-containers">
+        <div class="details-container certification-card">
+          <ul class="certification-list">
+            <li>
+              <h2 class="experience-sub-title">Co-Chair in Project MFlix</h2>
+              <p>Mathematics Society- University of Moratuwa</p>
+            </li>
+            <li>
+              <h2 class="experience-sub-title">Member</h2>
+              <p>IEEE Student Branch University of Moratuwa</p>
+            </li>
+            <li>
+              <h2 class="experience-sub-title">Company Coordinator - Careers Day 2024</h2>
+              <p>University Of Moratuwa</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact">
+    <p class="section__text__p1">Get in Touch</p>
+    <h1 class="title">Contact Me</h1>
+    <div class="contact-info-upper-container">
+      <div class="contact-info-container">
+        <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
+        <p><a href="mailto:ishandewpura.21@cse.mrt.ac.lk">ishandewpura.21@cse.mrt.ac.lk</a></p>
+      </div>
+      <div class="contact-info-container">
+        <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
+        <p><a href="https://www.linkedin.com/in/ishan-kawshalya-a557bb241/">LinkedIn</a></p>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <nav>
+      <div class="nav-links-container">
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#achievements">Achievements</a></li>
+          <li><a href="#volunteer">Volunteer</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
     </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">My Portfolio</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </div>
-      </div>
-    </nav>
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="./assets/profile-pic.jpg" alt="Ishan Kawshalya profile picture" />
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Ishan Kawshalya</h1>
-        <p class="section__text__p2">Computer Science and Engineering undergraduate from University of Moratuwa, Sri Lanka.</p>
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('./assets/resume-example.pdf')"
-          >
-            Download CV
-          </button>
-          <button class="btn btn-color-1">
-            Hire Me
-          </button>
-        </div>
-        <div id="socials-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https://linkedin.com/in/ishan-kawshalya-a557bb241'"
-          />
-          <img
-            src="./assets/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://github.com/Ishdew'"
-          />
-        </div>
-      </div>
-    </section>
-    <section id="about">      
-      <h1 class="title">About Me</h1>
-      <p class="section__text__p1">I am a full stack web developer with a passion for creating interactive and responsive web applications. 
-        I have experience working with JavaScript, React, Node.js, Express, MySQL, HTML and CSS. 
-        I am a quick learner and I am always looking to expand my knowledge and skill set. 
-        I am a team player and I am excited to work with others to create amazing applications.I am eager to learn new technologies.</p>
-      
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="./assets/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Certifications</h3>
-              <p>Web Design for begineers,CODL UoM</p>
-              <p>Supervised Machine Learning:
-                Regression and Classification,Cousera
-                </p>
-            </div>
-            <div class="details-container">
-              <img
-                src="./assets/education.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>University of Moratuwa<br />B.SC Engineering (Hons) - Computer Science and Engineering</p>
-            </div>
-          </div>
-          <div class="text-container">
-            
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-      />
-    </section>
-    <section id="experience">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Experience</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title">Tech Stack</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>HTML</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>CSS</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>MySQL</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>JavaScript</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>React</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Java</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-            </div>
-          </div>
-          <div class="details-container">
-            <h2 class="experience-sub-title">Tech Stack</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Python</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Node JS</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>SpringBoot</h3>
-                  <p>Basics</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>GitHub</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#projects'"
-      />
-    </section>
-    <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-1.png"
-                alt="Project 1"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Human Resource Management System</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/Ishdew/HRMS_Project'"
-              >
-                Github
-              </button>
-              
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-2.png"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">My Portfolio Site</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Github
-              </button>              
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-3.png"
-                alt="Project 3"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Movie Theatre Reservation System</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/Ishdew/movie-reservation-system'"
-              >
-                Github
-              </button>              
-            </div>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
-    </section>
-    <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="./assets/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p><a href="mailto:ishandewpura.21@cse.mrt.ac.lk">ishandewpura.21@cse.mrt.ac.lk</a></p>
-        </div>
-        <div class="contact-info-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a href="https://www.linkedin.com/in/ishan-kawshalya-a557bb241/">LinkedIn</a></p>
-        </div>
-      </div>
-    </section>
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-      <p>Copyright &#169; 2024 Ishan Kawshalya. All Rights Reserved.</p>
-    </footer>
-    <script src="script.js"></script>
-  </body>
+    <p>Copyright &#169; 2024 Ishan Kawshalya. All Rights Reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
 </html>

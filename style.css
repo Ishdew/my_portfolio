@@ -2,6 +2,17 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
+:root {
+  --bg-color: #ffffff;
+  --bg-color-alt: #fafafa;
+  --text-color: #333333;
+  --text-color-secondary: #555555;
+  --accent-color: #000000;
+  --border-color: #a3a3a3;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --shadow-hover: rgba(0, 0, 0, 0.15);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +20,8 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 html {
@@ -16,7 +29,17 @@ html {
 }
 
 p {
-  color: rgb(85, 85, 85);
+  color: var(--text-color-secondary);
+}
+
+.text-small {
+  font-size: 0.8rem;
+}
+
+.highlight-text {
+  font-weight: 600;
+  color: var(--text-color);
+  /* darker black */
 }
 
 /* TRANSITION */
@@ -40,9 +63,11 @@ nav {
 }
 
 .nav-links {
-  gap: 2rem;
+  gap: 1.5rem;
+  /* Reduced gap */
   list-style: none;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  /* Reduced font size */
 }
 
 a {
@@ -50,6 +75,8 @@ a {
   text-decoration: none;
   text-decoration-color: white;
 }
+
+
 
 a:hover {
   color: grey;
@@ -150,10 +177,13 @@ a:hover {
 
 section {
   padding-top: 4vh;
-  height: 96vh;
+  height: fit-content;
+  /* Allow section to shrink to content */
   margin: 0 10rem;
   box-sizing: border-box;
   min-height: fit-content;
+  margin-bottom: 4rem;
+  /* Add some consistent spacing between sections */
 }
 
 .section-container {
@@ -162,11 +192,26 @@ section {
 
 /* PROFILE SECTION */
 
+/* PROFILE SECTION */
+
 #profile {
   display: flex;
   justify-content: center;
   gap: 5rem;
   height: 80vh;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .section__pic-container {
@@ -174,6 +219,24 @@ section {
   height: 400px;
   width: 400px;
   margin: auto 0;
+  border-radius: 50%;
+  /* Ensure profile pic is round if needed, or container is */
+  overflow: hidden;
+  /* Clip image if square */
+  box-shadow: 0 10px 25px var(--shadow-hover);
+  /* Add depth */
+  background: var(--bg-color-alt);
+  /* Placeholder background */
+  flex-shrink: 0;
+  /* Prevent squashing */
+  aspect-ratio: 1 / 1;
+  /* Enforce square ratio */
+}
+
+.section__pic-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .section__text {
@@ -187,23 +250,32 @@ section {
 
 .section__text__p1 {
   text-align: center;
+  font-size: 1.2rem;
+  color: var(--text-color-secondary);
+  margin-bottom: 0.5rem;
 }
 
 .section__text__p2 {
   font-size: 1.75rem;
   margin-bottom: 1rem;
+  color: var(--text-color);
 }
 
 .title {
-  font-size: 3rem;
+  font-size: 3.5rem;
+  /* Larger title */
   text-align: center;
+  margin-bottom: 0.5rem;
+  letter-spacing: -1px;
+  /* Tighter letter spacing for modern feel */
 }
 
 #socials-container {
   display: flex;
   justify-content: center;
   margin-top: 1rem;
-  gap: 1rem;
+  gap: 1.5rem;
+  /* More space between icons */
 }
 
 /* ICONS */
@@ -231,7 +303,7 @@ section {
 
 .btn-color-1,
 .btn-color-2 {
-  border: rgb(53, 53, 53) 0.1rem solid;
+  border: var(--accent-color) 0.1rem solid;
 }
 
 .btn-color-1:hover,
@@ -246,7 +318,7 @@ section {
 }
 
 .btn-color-1:hover {
-  background: rgb(0, 0, 0);
+  background: var(--accent-color);
 }
 
 .btn-color-2 {
@@ -254,7 +326,9 @@ section {
 }
 
 .btn-color-2:hover {
-  border: rgb(255, 255, 255) 0.1rem solid;
+  border: var(--accent-color) 0.1rem solid;
+  background-color: var(--text-color);
+  color: white;
 }
 
 .btn-container {
@@ -281,26 +355,51 @@ section {
 .about-containers,
 .about-details-container {
   display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* Center items if they don't fill the row */
 }
 
 .about-pic {
   border-radius: 2rem;
 }
 
-.arrow {
-  position: absolute;
-  right: -5rem;
-  bottom: 2.5rem;
-}
+
 
 .details-container {
   padding: 1.5rem;
   flex: 1;
   background: white;
   border-radius: 2rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
-  border-color: rgb(163, 163, 163);
-  text-align: center;
+  border: var(--border-color) 0.1rem solid;
+  /* Transition for hover effects */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Specific grid layout only for Projects section */
+/* Specific grid layout only for Projects section */
+#projects .details-container {
+  flex: 1 1 30%;
+  /* Grow, shrink, basis ~30% for 3 per row */
+  min-width: 300px;
+  /* Prevent getting too squished */
+  max-width: 400px;
+  /* Prevent getting too wide */
+}
+
+/* Prevent Skills section items from stretching too much */
+#skills .details-container {
+  flex: 1 1 20%;
+  /* Try to fit multiple in a row, but grow evenly */
+  min-width: 250px;
+  max-width: 350px;
+  /* Cap width so last item doesn't stretch to infinity */
+}
+
+.details-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px var(--shadow-hover);
 }
 
 .section-container {
@@ -316,12 +415,19 @@ section {
 
 /* EXPERIENCE SECTION */
 
-#experience {
+/* EXPERIENCE SECTION */
+
+#experience,
+#education,
+#skills,
+#certifications,
+#achievements,
+#volunteer {
   position: relative;
 }
 
 .experience-sub-title {
-  color: rgb(85, 85, 85);
+  color: var(--text-color-secondary);
   font-weight: 600;
   font-size: 1.75rem;
   margin-bottom: 2rem;
@@ -338,20 +444,134 @@ section {
   text-align: initial;
   flex-wrap: wrap;
   flex-direction: row;
-  gap: 2.5rem;
-  justify-content: space-around;
+  gap: 1.5rem;
+  /* Tighter gap for pills */
+  justify-content: center;
+  /* Center badges */
 }
 
-article {
+/* SKILL CARDS (Pills/Badges) */
+/* SKILL CARDS (Pills/Badges) */
+.skill-card {
   display: flex;
-  width: 10rem;
-  justify-content: space-around;
-  gap: 0.5rem;
+  width: auto;
+  /* Allow auto width for pills */
+  justify-content: center;
+  gap: 0;
+  /* No gap needed if just text */
+  padding: 0.8rem 1.5rem;
+  /* Slightly more padding for pill look */
+  border-radius: 2rem;
+  /* More rounded for pill shape */
+  border: 1px solid var(--border-color);
+  background: white;
+  transition: all 0.3s ease;
+  align-items: center;
+  box-shadow: 0 2px 5px var(--shadow-color);
+  /* Subtle shadow for depth */
 }
 
-article .icon {
-  cursor: default;
+.skill-card:hover {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  transform: translateY(-3px);
+  color: white;
+  box-shadow: 0 5px 15px var(--shadow-hover);
 }
+
+.skill-card:hover h3 {
+  color: white;
+}
+
+.skill-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0;
+  /* No margin needed */
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Specific styles for the Internship/Education sections */
+#experience .article-container,
+#education .article-container {
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#experience article,
+#education article {
+  width: 90%;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  text-align: center;
+}
+
+#experience article ul,
+#education article ul {
+  list-style-type: none;
+  /* Removing bullets for better centered look, or keep them inside? */
+  padding: 0;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+#experience article h3,
+#education article h3 {
+  margin-bottom: 0.3rem;
+}
+
+.company-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.company-header .experience-sub-title {
+  margin-bottom: 0;
+}
+
+.company-logo {
+  height: 5rem;
+  border-radius: 50%;
+  /* Optional: removes sharp corners if the logo is square */
+}
+
+.experience-tech {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-color-secondary);
+}
+
+.experience-links {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.github-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.github-link:hover {
+  text-decoration: underline;
+  color: var(--accent-color);
+}
+
+.small-icon {
+  height: 1.2rem;
+}
+
 
 /* PROJECTS SECTION */
 
@@ -360,8 +580,8 @@ article .icon {
 }
 
 .color-container {
-  border-color: rgb(163, 163, 163);
-  background: rgb(250, 250, 250);
+  border-color: var(--border-color);
+  background: var(--bg-color-alt);
 }
 
 .project-img {
@@ -380,6 +600,13 @@ article .icon {
   border-color: rgb(163, 163, 163);
 }
 
+.project-tools {
+  font-size: 0.85rem;
+  color: var(--text-color-secondary);
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+}
+
 /* CONTACT */
 
 #contact {
@@ -393,11 +620,16 @@ article .icon {
   display: flex;
   justify-content: center;
   border-radius: 2rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
-  border-color: rgb(163, 163, 163);
-  background: (250, 250, 250);
+  border: var(--border-color) 0.1rem solid;
+  background: var(--bg-color-alt);
   margin: 2rem auto;
   padding: 0.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-info-upper-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px var(--shadow-hover);
 }
 
 .contact-info-container {
@@ -419,6 +651,67 @@ article .icon {
 .email-icon {
   height: 2.5rem;
 }
+
+
+/* CERTIFICATIONS SECTION */
+.certification-card {
+  text-align: left;
+  /* Left align content for this specific card */
+  padding: 2rem;
+  width: 100%;
+  /* Ensure it takes available width inside the flex container if needed, or stick to flex: 1 */
+  max-width: 800px;
+  /* Optional constraint */
+  margin: 0 auto;
+  /* Center the card itself */
+}
+
+.certification-list {
+  list-style-type: none;
+  /* No bullets */
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.certification-list li {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1.5rem;
+}
+
+.certification-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.certification-list h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  margin-top: 0;
+  /* Reset */
+}
+
+.certification-list p {
+  font-size: 0.9rem;
+}
+
+.cert-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.cert-link:hover .experience-sub-title {
+  color: var(--accent-color);
+}
+
+.cert-link:hover p {
+  color: var(--text-color);
+}
+
 
 /* FOOTER SECTION */
 
